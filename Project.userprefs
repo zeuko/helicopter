@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HelicopterMovement.cs">
     <Files>
       <File FileName="Assets/PadRotation.cs" Line="12" Column="18" />
-      <File FileName="Assets/HelicopterMovement.cs" Line="5" Column="21" />
-      <File FileName="Assets/AbstractMovement.cs" Line="7" Column="9" />
+      <File FileName="Assets/HelicopterMovement.cs" Line="82" Column="5" />
+      <File FileName="Assets/Standard Assets/Scripts/Camera Scripts/SmoothLookAt.js" Line="18" Column="32" />
+      <File FileName="Assets/Standard Assets/Scripts/Camera Scripts/SmoothFollow.js" Line="42" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
