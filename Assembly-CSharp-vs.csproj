@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HelicopterCollisionExplosion.cs" />
      <Compile Include="Assets\HelicopterMovement.cs" />
      <Compile Include="Assets\PadRotation.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
