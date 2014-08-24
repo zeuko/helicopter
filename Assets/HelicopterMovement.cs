@@ -9,9 +9,15 @@ public class HelicopterMovement : MonoBehaviour {
 		
 	private const float maxAltitudeSpeed = 20.0f;
 	private const float altitudeSpeedIncrement = 5.0f;
+
+	private const int DIRECTION_UP = 1;
+	private const int DIRECTION_DOWN = -1;
+
+	private int movementDirection = 0;
 	private float altitudeSpeed = 0.0f;
 	
 	private float angle = 0.0f;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -21,9 +27,9 @@ public class HelicopterMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.A)) {
-			this.transform.Rotate (Vector3.up, -rotationSpeed * Time.deltaTime);
+			this.transform.Rotate (Vector3.forward, -rotationSpeed * Time.deltaTime);
 		} else if (Input.GetKey (KeyCode.D)) {
-			this.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+			this.transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
 		}
 		
 		if (Input.GetKey(KeyCode.W)) {
@@ -39,10 +45,18 @@ public class HelicopterMovement : MonoBehaviour {
 		
 		if (Input.GetKey(KeyCode.LeftShift)) {
 			increaseAltitudeSpeed();
+			setDirection(DIRECTION_UP);
+		} else if (Input.GetKey (KeyCode.LeftControl)) {
+			increaseAltitudeSpeed();
+			setDirection(DIRECTION_DOWN);
 		} else {
 			resetAltitudeSpeed();
 		}
 		adjustAltitude();
+	}
+
+	private void setDirection(int direction) {
+		this.movementDirection = direction;
 	}
 
 	private void resetAngle() {
@@ -86,7 +100,7 @@ public class HelicopterMovement : MonoBehaviour {
 	private void adjustAltitude() {
 		if (!Mathf.Approximately(0.0f, altitudeSpeed)) {
 			Vector3 position = this.transform.position;
-			position.y += altitudeSpeed * Time.deltaTime;
+			position.y += movementDirection * altitudeSpeed * Time.deltaTime;
 			this.transform.position = position;
 		}
 	}
