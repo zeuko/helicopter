@@ -17,4 +17,8 @@ public class HelicopterMovement : AbstractMovement {
 			this.transform.Rotate (delta, 0.0f, 0.0f);
 		}
 	}
+
+	public void onCollisionEnter(Collision collision) {
+		this.transform.position = new Vector3(0, 0, 0);
+	}
 }

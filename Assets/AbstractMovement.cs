@@ -23,7 +23,7 @@ public abstract class AbstractMovement : MonoBehaviour {
 		} 
 		if (Input.GetKey(KeyCode.UpArrow)) {
 			adjustAngle();
-			this.transform.Translate(0.0f, 0.0f, -maxMovementSpeed * Time.deltaTime);
+			this.transform.Translate(0.0f, maxMovementSpeed * Time.deltaTime, 0.0f);
 		} else {
 			resetAngle();
 		}
